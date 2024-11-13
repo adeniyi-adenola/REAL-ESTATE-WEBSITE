@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Abdulkhaliq's Property Solutions</title>
+
+    <!-- Favicon -->
+    <link href="images/real_estate_icon.jpg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Icon font stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootstrap stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="images/real_estate_logo.jpg" type="image/x-icon">
+
+    <style>
+        /* Spinner styles */
+        #spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #32CD32;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+
+        #spinner img {
+            width: 100px; 
+            align-items: center;
+        }
+
+        
+        /* Navbar branding */
+        .navbar-brand img {
+            width: 120px;
+            height: 80px;
+        }
+
+        .navbar-brand h1 {
+    font-size: 1.5rem;
+    color: #32CD32;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand h1 {
+        font-size: 2rem;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .navbar-brand h1 {
+        font-size: 1.75rem;
+        white-space: normal;
+    }
+}
+/* Align Sign Up and Login buttons inline with other navbar items */
+.navbar-nav .nav-item {
+    margin: 0 8px; /* spacing between items */
+}
+
+.navbar-nav .nav-item .btn {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Navbar with buttons styled similarly to nav links */
+.navbar-nav .btn-outline-primary,
+.navbar-nav .btn-primary {
+    color: white;
+    background-color: #32CD32;
+     border: none;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    color: white;
+    background-color: #32CD; 
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: #32CD;
+    color: white;
+}
+
+    
+    /* Hero Section */
+    .hero-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f4f4f4;
+        padding: 100px 0;
+        margin: 0 8px;
+    }
+    
+    .hero-text {
+        max-width: 50%;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #004080;
+    }
+    
+    .hero-text h1 span {
+        color: #32CD32;
+    }
+    
+    .hero-text p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        color: black;
+    }
+    
+    .hero-text .btn {
+        background-color: #32CD32;
+        border-color: #32CD32;
+        margin-top: 20px;
+    }
+    
+    .hero-image {
+        position: relative;
+        max-width: 100%;
+    }
+    
+    .hero-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    
+    /* Add Property Button Hover Effect */
+ .btn-add-property {
+    background-color: #32CD32; /* Customize color */
+    border-color: #32CD32;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-add-property:hover {
+    background-color: #2f93f7;
+    border-color: #2f93f7;
+    transform: scale(1.05);
+}
+
+    
+    /* Adjust for smaller screens */
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .hero-text {
+            max-width: 100%;
+        }
+    
+        .hero-text h1 {
+            font-size: 2rem;
+        }
+    }
+    
+    /* Navbar link color */
+    .navbar-nav .nav-link {
+        color: black;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #32CD32;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 0 8px;
+    }
+    
+    /* Hamburger Menu */
+    .navbar-toggler {
+        position: relative;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: none;
+    }
+    
+    .navbar-toggler.collapsed .navbar-toggler-icon:before {
+        content: '\f0c9'; /* Font Awesome for menu icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
+    
+    .navbar-toggler:not(.collapsed) .navbar-toggler-icon:before {
+        content: '\f00d'; /* Font Awesome for cancel icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
+
+    /* Align Sign Up and Login buttons inline with other navbar items */
+.navbar-nav .nav-item {
+    margin: 0 8px; /* spacing between items */
+}
+
+.navbar-nav .nav-item .btn {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Navbar with buttons styled similarly to nav links */
+.navbar-nav .btn-outline-primary,
+.navbar-nav .btn-primary {
+    color: white;
+    background-color: #32CD32;
+     border: none;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    color: white;
+    background-color: #32CD; 
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: #32CD;
+    color: white;
+}
+
+/* Footer */
+footer {
+        background-color: #004080;
+        color: #fff;
+        padding: 40px 0;
+    }
+    
+    footer h5 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    footer p {
+        margin-bottom: 10px;
+    }
+    
+    .footer-menu {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+    
+    .footer-menu a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .footer-menu a:hover {
+        color: #f0e68c;
+        text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+        .footer-bottom {
+            text-align: center;
+        }
+    
+        .footer-menu {
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
+
+
+    .btn-social {
+        background-color: white;
+        color: #004080;
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .btn-social:hover {
+        background-color: #32CD32;
+        color: white;
+    }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f4f4f4;
+            padding: 100px 0;
+            margin: 0 8px;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .hero-text h1 span {
+            color: #32CD32;
+        }
+
+        .hero-text p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: black;
+        }
+
+        .hero-text .btn {
+            background-color: #32CD32;
+            border-color: #32CD32;
+            margin-top: 20px;
+        }
+
+        .hero-image {
+            position: relative;
+            max-width: 100%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover; 
+            border-radius: 10px;
+        }
+        
+
+        /* Search Bar */
+.search-bar {
+    background-color: #32CD32;
+    padding: 20px;
+    margin-top: -30px;
+}
+
+.search-bar form {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input,
+.search-bar select,
+.search-bar button {
+    margin-right: 10px;
+    flex: 1 1 auto; 
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .search-bar input,
+    .search-bar select,
+    .search-bar button,
+    .search-bar form {
+        width: 100%; 
+        margin-right: 0;
+        margin-bottom: 10px;  
+        flex-wrap: wrap; 
+    }
+
+    .search-bar button {
+        flex-basis: auto; 
+    }
+}
+
+.search-bar button {
+    background-color: #004080;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+/* Change button hover effect */
+.search-bar button:hover {
+    background-color: #003366; /* Darker blue on hover */
+}
+        /* Add Property button */
+        .btn-primary {
+            background-color: #32CD32;
+            border-color: #32CD32;
+        }
+
+        .btn-primary:hover {
+            background-color: #32CD32; /* No color change on hover */
+            border-color: #32CD32;
+        }
+
+        /* Adjust for smaller screens */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem; 
+            }
+        }
+ 
+
+
+
+     /* Responsive h1 */
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                white-space: normal;
+            }
+        }
+        
+
+        /* Carousel Control Styles */
+        .carousel-control-prev,
+        .carousel-control-next {
+            position: absolute;
+
+            
+            
+            
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #32CD32;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+      
+        /* Property Types Section Styling */
+.container-xxl {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.text-center h1 {
+    font-size: 2.5rem;
+    color: #004080;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.text-center p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.cat-item {
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cat-item .rounded {
+    background-color: white;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.cat-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cat-item h6 {
+    font-size: 1.2rem;
+    color: #004080;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.cat-item span {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.cat-item .rounded:hover {
+    border-color: #32CD32;
+}
+
+@media (max-width: 768px) {
+    .text-center h1 {
+        font-size: 2rem;
+    }
+
+    .cat-item img {
+        height: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .text-center h1 {
+        font-size: 1.8rem;
+    }
+
+    .cat-item img {
+        height: 100%;
+        width: fit-content;
+    }
+}
+
+
+.modal1 {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 70px;
+}
+
+/* Modal content */
+.modal-content1 {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+/* Modal image styling */
+.modal-content img {
+    max-width: 100%;
+    height: 60%;
+    margin-bottom: 20px;
+}
+/* About Section Responsive Adjustments */
+.container-xxl {
+    padding: 30px 15px; /* Reduced padding for smaller screens */
+}
+
+.image-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; /* Default to row for larger screens */
+}
+
+.text-column {
+    padding-left: 30px; 
+}
+
+/* Responsive adjustments for the About section */
+@media (max-width: 768px) {
+    .image-column {
+        flex-direction: column; /* Stack image above text */
+        text-align: center; /* Center text */
+    }
+
+    .text-column {
+        padding-left: 0; /* Remove left padding on smaller screens */
+        margin-top: 20px; /* Add margin for separation */
+    }
+
+    .text-column h1 {
+        font-size: 1.8rem; /* Smaller heading size */
+    }
+
+    .text-column p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    .text-column .btn {
+        width: 100%; /* Full-width button */
+    }
+}
+
+@media (max-width: 576px) {
+    .text-column h1 {
+        font-size: 1.5rem; /* Even smaller heading size */
+    }
+
+    .text-column p {
+        font-size: 0.9rem; /* Adjust further for small devices */
+    }
+}
+
+/*testimonial section*/
+.testimonial-section {
+    padding: 50px 0;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-slider {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.testimonial-item {
+    padding: 20px;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.testimonial-content {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.testimonial-client {
+    display: flex;
+    align-items: center;
+}
+
+.client-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.client-info h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.client-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.slick-prev, .slick-next {
+    background: lime;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 10px 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: white;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.slick-prev {
+    left: -40px;
+}
+
+.slick-next {
+    right: -40px;
+}
+
+.slick-prev::before {
+    content: '←';
+    font-size: 30px;
+    color: white;
+}
+
+.slick-next::before {
+    content: '→';
+    font-size: 30px;
+    color: white;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background: darkgreen;
+}
+
+@media (max-width: 768px) {
+    .testimonial-content {
+        font-size: 14px;
+    }
+
+    .client-info h5 {
+        font-size: 14px;
+    }
+
+    .client-info p {
+        font-size: 12px;
+    }
+
+    .slick-prev, .slick-next {
+        font-size: 5px;
+        padding: 8px;
+    }
+    
+    .client-img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* Slick arrow customization */
+.slick-prev, .slick-next {
+    background: lime; /* Background color */
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 10px 15px; /* Increased padding for a thicker appearance */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: white; /* Arrow color */
+    border-radius: 50%; /* Rounded corners */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.slick-prev {
+    left: -40px;
+}
+
+.slick-next {
+    right: -40px;
+}
+
+/* Arrow styles */
+.slick-prev::before {
+    content: '←'; /* Left arrow */
+    font-size: 30px;
+    color: white; /* Arrow color */
+}
+
+.slick-next::before {
+    content: '→'; /* Right arrow */
+    font-size: 30px;
+    color: white; /* Arrow color */
+}
+
+/* Button hover effect */
+.slick-prev:hover, .slick-next:hover {
+    background: darkgreen; /* Darker background on hover */
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Loading Spinner -->
+    <div id="spinner">
+        <img src="https://i.pinimg.com/originals/fa/87/77/fa87774590186b287a5338d7c87afc0c.gif" alt="Loading...">
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+   
+<div class="container-xxl bg-white p-0">
+<!-- Include Bootstrap CSS and JavaScript -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<div class="container-xxl bg-white p-0">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 px-4 sticky-top" style="background-color: #004080;">
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+            <img src="images/real_estate_icon.png" alt="icon" class="img-fluid">
+            <h1 class="ms-2">Abdulkhaliq's Property Solutions</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span id="navbar-icon" class="fas fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="property-list.html" class="dropdown-item">Property List</a>
+                        <a href="property-type.html" class="dropdown-item">Property Type</a>
+                        <a href="property-agent.html" class="dropdown-item">Property Agent</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404-error.html" class="dropdown-item">404 Error</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addPropertyModal">Add Property</button>
+    
+                <li class="nav-item">
+                    <a href="signup.html" class="btn btn-outline-primary me-2">Sign Up</a>
+    `               </li>
+                <li class="nav-item">
+                    <a href="login.html" class="btn btn-outline-primary">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    </div>
+    <!-- Add Property Modal -->
+    <div class="modal fade" id="addPropertyModal" tabindex="-1" aria-labelledby="addPropertyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addPropertyModalLabel">Add New Property</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="propertyForm">
+                <div class="mb-3">
+                  <label for="propertyTitle" class="form-label">Property Title</label>
+                  <input type="text" class="form-control" id="propertyTitle" name="propertyTitle" placeholder="Enter property title" required>
+                </div>
+                <div class="mb-3">
+                  <label for="propertyLocation" class="form-label">Property Location</label>
+                  <input type="text" class="form-control" id="propertyLocation" name="propertyLocation" placeholder="Enter property location" required>
+                </div>
+                <div class="mb-3">
+                    <label for="propertyPrice" class="form-label">Property Price</label>
+                    <div class="input-group">
+                      <select class="form-select" id="currency" name="currency">
+                        <option value="₦">₦</option> <!-- Nigerian Naira -->
+                        <option value="$">$</option> <!-- Dollar -->
+                        <option value="€">€</option> <!-- Euro -->
+                        <option value="£">£</option> <!-- British Pound -->
+                        <option value="₹">₹</option> <!-- Indian Rupee -->
+                        <option value="¥">¥</option> <!-- Japanese Yen -->
+                        <option value="₣">₣</option> <!-- Swiss Franc -->
+                        <option value="₽">₽</option> <!-- Russian Ruble -->
+                        <option value="₺">₺</option> <!-- Turkish Lira -->
+                        <option value="kr">kr</option> <!-- Swedish Krona -->
+                        <option value="₴">₴</option> <!-- Ukrainian Hryvnia -->
+                        <option value="฿">฿</option> <!-- Thai Baht -->
+                        <option value="R$">R$</option> <!-- Brazilian Real -->
+                        <option value="A$">A$</option> <!-- Australian Dollar -->
+                        <option value="C$">C$</option> <!-- Canadian Dollar -->
+                        <option value="₩">₩</option> <!-- South Korean Won -->
+                        <option value="₲">₲</option> <!-- Paraguayan Guarani -->
+                        <option value="S$">S$</option> <!-- Singapore Dollar -->
+                        <option value="₵">₵</option> <!-- Ghanaian Cedi -->
+                        <option value="KSh">KSh</option> <!-- Kenyan Shilling -->
+                        <option value="RD$">RD$</option> <!-- Dominican Peso -->
+                        <option value="₽">₽</option> <!-- Russian Ruble -->
+                        <option value="NZ$">NZ$</option> <!-- New Zealand Dollar -->
+                        <option value="₺">₺</option> <!-- Turkish Lira -->
+                        <option value="د.إ">د.إ</option> <!-- UAE Dirham -->
+                        <option value="₿">₿</option> <!-- Bitcoin (cryptocurrency) -->
+                        <option value="BTC">BTC</option> <!-- Bitcoin (text) -->
+                        <option value="XOF">XOF</option> <!-- West African CFA franc -->
+                        <option value="XAF">XAF</option> <!-- Central African CFA franc -->
+                        
+                      </select>
+                      <input type="number" class="form-control" id="propertyPrice" name="propertyPrice" placeholder="Enter property price" required>
+                    </div>
+                  </div>
+                  
+                <div class="mb-3">
+                  <label for="propertyDescription" class="form-label">Property Description</label>
+                  <textarea class="form-control" id="propertyDescription" name="propertyDescription" rows="4" placeholder="Enter property description" required></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="propertyImage" class="form-label">Property Image</label>
+                  <input type="file" class="form-control" id="propertyImage" name="propertyImage" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Property</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Modal -->
+      <script>document.getElementById('currency').addEventListener('change', function() {
+        var selectedCurrency = this.value;
+        document.getElementById('propertyPrice').value = selectedCurrency + " " + document.getElementById('propertyPrice').value.replace(/[^0-9.]/g, '');
+      });
+      </script>
+    
+      
+
+
+        <!-- Hero Section Start -->
+        <div class="container">
+            <div class="row hero-section">
+                <div class="col-lg-6 hero-text">
+                    <h1>Find A <span>Perfect Home</span> To Live With Your Family</h1>
+                    <p>Discover the perfect place to call home. Whether you're looking to buy or rent, we have properties tailored to suit your lifestyle and needs.</p>
+                    <a href="get-started.html" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <div class="col-lg-6 hero-image">
+                    <!-- Carousel for images -->
+                    <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/building 1.jpg" alt="Beautiful Property">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/building 2.jpg" alt="Beautiful Property">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/building 4.jpg" alt="Beautiful Property">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/building 5.jpg" alt="Beautiful Property">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/building 6.jpg" alt="Beautiful Property">
+                            </div>
+                            <!-- Add more images as needed -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Section End -->
+       
+        
+     <!-- Search Bar Start -->
+<div class="container-fluid search-bar">
+    <form class="d-flex justify-content-center">
+        <input type="text" class="form-control me-2" placeholder="Search Keyword" aria-label="Search Keyword" required>
+        <select class="form-select me-2">
+            <option selected disabled>Property Type</option>
+            <option>House</option>
+            <option>Apartment</option>
+            <option>Office</option>
+            <option>town house</option>
+            <option>Comal Buildingmerci</option>
+            <option>Mixed-Use Building</option>
+            <option>High-Rise Building</option>
+            <option>Low-Rise Building</option>
+            <option>Skyscraper</option>
+            <option>Office Building</option>
+            <option>Industrial Building</option>
+            <option>Warehouse</option>
+            <option>Educational Building</option>
+            <option>Hotel</option>
+            <option>Apartment Complex</option>
+            <option>Condominium Building</option>
+            <option>Townhouse Development</option>
+            <option>Single-Family Home</option>
+            <option>Multi-Family Home</option>
+            <option>Retirement Community</option>
+        </select>
+        <select class="form-select me-2">
+            <option selected disabled>Location</option>
+            <option>Lagos</option>
+            <option>Abuja</option>
+            <option>Port Harcourt</option>
+            <option>Ibadan</option>
+            <option>Benin City</option>
+            <option>Kano</option>
+            <option>Calabar</option>
+            <option>Enugu</option>
+            <option>Oyo</option>
+            <option>Ilorin</option>
+            <option>New York</option>
+            <option>Los Angeles</option>
+            <option>Chicago</option>
+            <option>Houston</option>
+            <option>London</option>
+            <option>Toronto</option>
+            <option>Sydney</option>
+            <option>Dubai</option>
+            <option>Tokyo</option>
+            <option>Berlin</option>
+        </select>
+        <button type="submit" class="btn">Search</button>
+    </form>
+</div>
+<!-- Search Bar End -->
+
+<!-- Property Types Section Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="mb-3">Property Types</h1>
+            <h4>At Abdulkhaliq's Property Solutions, we offer a diverse range of property types to suit your needs, 
+            including residential homes, commercial properties, land for sale, and rental options. Whether you are looking to buy your dream home or invest in a lucrative commercial space, 
+            our expert team is here to guide you every step of the way.</h4>
+        </div>
+
+       
+        <div class="row g-4">
+            <!-- Apartment -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="cat-item d-block bg-light text-center rounded p-3" onclick="openModal('Apartment', 'Spacious and modern apartment units.', 'images/appartment image.jpg', '123 properties available')">
+                    <div class="rounded p-4">
+                        <img src="images/appartment image.jpg" alt="Apartment image" class="img-fluid mb-3">
+                        <h4>Apartment</h4>
+                        <span>150 properties</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Villa -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="cat-item d-block bg-light text-center rounded p-3" onclick="openModal('Villa', 'Luxurious villas with top amenities.', 'images/villa image.jpg', '85 properties available')">
+                    <div class="rounded p-4">
+                        <img src="images/villa image.jpg" alt="Villa Image" class="img-fluid mb-3">
+                        <h4>Villa</h4>
+                        <span>85 properties</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Building -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="cat-item d-block bg-light text-center rounded p-3" onclick="openModal('Building', 'Multi-story buildings for residential or commercial use.', 'images/building image.jpg', '150 properties available')">
+                    <div class="rounded p-4">
+                        <img src="images/building image.jpg" alt="Building Image" class="img-fluid mb-3">
+                        <h4>Building</h4>
+                        <span>150 properties</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shop -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="cat-item d-block bg-light text-center rounded p-3" onclick="openModal('Shop', 'Shops in prime commercial areas.', 'images/shop image.jpg', '200 properties available')">
+                    <div class="rounded p-4">
+                        <img src="images/shop image.jpg" alt="Shop Image" class="img-fluid mb-3">
+                        <h4>Shop</h4>
+                        <span>200 properties</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Garage -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="cat-item d-block bg-light text-center rounded p-3" onclick="openModal('Garage', 'Spacious garages in secure areas.', 'images/garage image.jpg', '75 properties available')">
+                    <div class="rounded p-4">
+                        <img src="images/garage image.jpg" alt="Garage Image" class="img-fluid mb-3">
+                        <h4>Garage</h4>
+                        <span>75 properties</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Townhouse -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="cat-item d-block bg-light text-center rounded p-3" onclick="openModal('Townhouse', 'Modern townhouses with shared amenities.', 'images/townhouse image.jpg', '100 properties available')">
+                    <div class="rounded p-4">
+                        <img src="images/townhouse image.jpg" alt="Townhouse Image" class="img-fluid mb-3">
+                        <h4>Townhouse</h4>
+                        <span>100 properties</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Office -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="cat-item d-block bg-light text-center rounded p-3" onclick="openModal('Office', 'Office spaces in business districts.', 'images/office building image.jpg', '50 properties available')">
+                    <div class="rounded p-4">
+                        <img src="images/office building image.jpg" alt="Office Image" class="img-fluid mb-3">
+                        <h4>Office</h4>
+                        <span>50 properties</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="cat-item d-block bg-light text-center rounded p-3" onclick="openModal('Home', 'Beautiful homes in peaceful areas.', 'images/home building.jpg', '300 properties available')">
+                    <div class="rounded p-4">
+                        <img src="images/home building.jpg" alt="Home Image" class="img-fluid mb-3">
+                        <h4>Home</h4>
+                        <span>300 properties</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Section -->
+<div id="propertyModal" class="modal1">
+    <div class="modal-content1">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <img id="modalImage" src="" alt="Property Image" class="img-fluid mb-3">
+        <p id="modalDescription"></p>
+        <p id="modalProperties"></p>
+    </div>
+</div>
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 image-column wow fadeIn" data-wow-delay="0.1s">
+                <img src="images/property building.jpg" alt="Property Image" class="img-fluid w-100">
+            </div>
+            <div class="col-lg-6 text-column wow fadeIn" data-wow-delay="0.5s">
+                <h1 class="mb-4">#1 Place To Find The Perfect Property</h1>
+                <p class="mb-4">Discover a wide range of properties that fit your needs and budget. Whether you're looking to buy, rent, or invest, we have the perfect solutions for you.</p>
+                <p><i class="fa fa-check text-primary ne-3"></i>Exceptional properties that exceed your expectations</p>
+                <p><i class="fa fa-check text-primary ne-3"></i>A diverse selection tailored to suit your lifestyle</p>
+                <p><i class="fa fa-check text-primary ne-3"></i>Personalized support to guide you every step of the way</p>
+                <a class="btn btn-primary py-3 px-5" href="read-more.html">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Services Section Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="mb-3">Our Services</h1>
+            <h4>We provide a comprehensive range of services tailored to meet your real estate needs. From property management to investment advice, our team is here to help.</h4>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item d-block bg-light text-center rounded p-3">
+                    <div class="rounded p-4">
+                        <i class="bi bi-house-door-fill mb-3" style="font-size: 2rem;"></i>
+                        <h4>Property Management</h4>
+                        <p>Expert management of residential and commercial properties.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item d-block bg-light text-center rounded p-3">
+                    <div class="rounded p-4">
+                        <i class="bi bi-people-fill mb-3" style="font-size: 2rem;"></i>
+                        <h4>Investment Advisory</h4>
+                        <p>Personalized investment advice to maximize your returns.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item d-block bg-light text-center rounded p-3">
+                    <div class="rounded p-4">
+                        <i class="bi bi-person-bounding-box mb-3" style="font-size: 2rem;"></i>
+                        <h4>Client Support</h4>
+                        <p>Dedicated support for all your real estate inquiries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services Section End -->
+
+
+<!-- FAQs Section Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="mb-3">Frequently Asked Questions</h1>
+            <h4>Find answers to some of the most common questions about our services and real estate in general.</h4>
+        </div>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What types of properties do you handle?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We handle a variety of properties, including residential homes, commercial spaces, land for sale, and investment properties. Whether you’re looking to buy, sell, or rent, we have the expertise to assist you with your needs.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How can I list my property with you?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can list your property by contacting us directly through our website's "Contact Us" page or by visiting our office. We will guide you through the necessary documentation and provide expert advice to ensure your property gets the attention it deserves.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What fees are associated with your services?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Our fees vary depending on the services rendered. Typically, we charge a commission based on the sale price for real estate transactions, while rental listings may involve a one-time fee. Please contact us for a detailed quote tailored to your specific needs.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        How long does the process take to sell a property?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        The time it takes to sell a property can vary significantly based on factors such as location, market conditions, and pricing strategy. On average, properties can sell anywhere from a few weeks to several months. Our team will work diligently to expedite the process and keep you informed every step of the way.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Do you provide property management services?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, we offer comprehensive property management services, including tenant screening, rent collection, maintenance, and property inspections. Our goal is to maximize your investment while minimizing your stress. Contact us for more details about our property management packages.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Can you help me with real estate investment advice?
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely! Our experienced team provides personalized investment advisory services tailored to your financial goals and risk tolerance. We analyze market trends and property values to help you make informed decisions about your real estate investments.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FAQs Section End -->
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h1 class="mb-3">Latest Articles</h1>
+                <h4>Stay updated with the latest trends in real estate and valuable insights from our experts.</h4>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="blog-item d-block bg-light text-center rounded p-3">
+                        <div class="rounded p-4">
+                            <img src="images/real estate blog image 1.jpg" alt="Understanding Property Investment" class="img-fluid mb-3">
+                            <h4>Understanding Property Investment</h4>
+                            <p>A beginner's guide to investing in real estate.</p>
+                            <button class="btn btn-primary" onclick="toggleContent('content1')">Read More</button>
+                        </div>
+                        <!-- Hidden Blog Content -->
+                        <div id="content1" class="blog-content" style="display: none;">
+                            <h3>Understanding Property Investment</h3>
+                            <p>Investing in real estate is a great way to build wealth over time. This guide provides you with the basics to start.</p>
+                            <p>Key points include understanding property value, location importance, and long-term profitability.</p>
+                            <button class="btn btn-secondary" onclick="toggleContent('content1')">Show Less</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="blog-item d-block bg-light text-center rounded p-3">
+                        <div class="rounded p-4">
+                            <img src="images/real estate blog image 2.jpg" alt="How to Stage Your Home for Sale" class="img-fluid mb-3">
+                            <h4>How to Stage Your Home for Sale</h4>
+                            <p>Tips for making your home more attractive to buyers.</p>
+                            <button class="btn btn-primary" onclick="toggleContent('content2')">Read More</button>
+                        </div>
+                        <!-- Hidden Blog Content -->
+                        <div id="content2" class="blog-content" style="display: none;">
+                            <h3>How to Stage Your Home for Sale</h3>
+                            <p>Staging can significantly affect your home's value. Decluttering and using neutral colors are key to attracting buyers.</p>
+                            <ul>
+                                <li>Declutter and deep clean</li>
+                                <li>Use neutral colors</li>
+                                <li>Highlight key spaces like the living room and kitchen</li>
+                            </ul>
+                            <button class="btn btn-secondary" onclick="toggleContent('content2')">Show Less</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="blog-item d-block bg-light text-center rounded p-3">
+                        <div class="rounded p-4">
+                            <img src="images/real estate blog image 3.jpg" alt="Market Trends to Watch in 2024" class="img-fluid mb-3">
+                            <h4>Market Trends to Watch in 2024</h4>
+                            <p>Stay informed about the real estate market landscape.</p>
+                            <button class="btn btn-primary" onclick="toggleContent('content3')">Read More</button>
+                        </div>
+                        <!-- Hidden Blog Content -->
+                        <div id="content3" class="blog-content" style="display: none;">
+                            <h3>Market Trends to Watch in 2024</h3>
+                            <p>In 2024, remote work and green homes will dominate buyer preferences. Technology and interest rate changes will also play key roles.</p>
+                            <button class="btn btn-secondary" onclick="toggleContent('content3')">Show Less</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to Toggle Content -->
+    <script>
+        function toggleContent(contentId) {
+            var content = document.getElementById(contentId);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<style>
+    .blog-item {
+        transition: transform 0.3s;
+    }
+    
+    .blog-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .blog-item img {
+        border-radius: 10px;
+    }
+</style>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    
+
+       <!-- Testimonials Section Start -->
+<div class="container-xxl py-5 testimonial-section">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="mb-3">What Our Clients Say</h1>
+            <h4>We take pride in providing exceptional service to our clients. Here's what they have to say about us!</h4>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"Abdulkhaliq's Property Solutions helped me find my dream home! Their team was professional and attentive."</p>
+                    <div class="testimonial-client">
+                        <img src="images/micheal b jordan.jpg" alt="John Doe" class="client-img">
+                        <div class="client-info">
+                            <h5>Micheal b. Jordan</h5>
+                            <p>Property Investor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"A fantastic experience! They guided me through every step of the process."</p>
+                    <div class="testimonial-client">
+                        <img src="images/sarah smith.jpg" alt="Sarah Smith" class="client-img">
+                        <div class="client-info">
+                            <h5>Sarah Smith</h5>
+                            <p>Home Buyer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"I found the perfect rental property, and the service was seamless from start to finish."</p>
+                    <div class="testimonial-client">
+                        <img src="images/james.jpg" alt="James Brown" class="client-img">
+                        <div class="client-info">
+                            <h5>James Brown</h5>
+                            <p>Renter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"I was able to invest in real estate with confidence, thanks to their expert advice."</p>
+                    <div class="testimonial-client">
+                        <img src="images/emilly white.jpg" alt="Emily White" class="client-img">
+                        <div class="client-info">
+                            <h5>Emily White</h5>
+                            <p>Real Estate Investor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"The team at Abdulkhaliq's Property Solutions was incredibly helpful. They went above and beyond to ensure I was happy with my purchase."</p>
+                    <div class="testimonial-client">
+                        <img src="images/micheal jackson.jpg" alt="Michael Johnson" class="client-img">
+                        <div class="client-info">
+                            <h5>Michael Johnson</h5>
+                            <p>First-time Home Buyer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"I highly recommend Abdulkhaliq's Property Solutions! Their market knowledge and dedication made the buying process easy."</p>
+                    <div class="testimonial-client">
+                        <img src="images/davis.jpg" alt="Linda Davis" class="client-img">
+                        <div class="client-info">
+                            <h5>Linda Davis</h5>
+                            <p>Home Seller</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"Exceptional service! They understood my needs and helped me find exactly what I was looking for."</p>
+                    <div class="testimonial-client">
+                        <img src="images/robert.jpg" alt="Robert Wilson" class="client-img">
+                        <div class="client-info">
+                            <h5>Robert Wilson</h5>
+                            <p>Real Estate Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"A fantastic experience from start to finish! I couldn't have asked for a better team to help me with my investment."</p>
+                    <div class="testimonial-client">
+                        <img src="images/patricia.jpg" alt="Patricia Garcia" class="client-img">
+                        <div class="client-info">
+                            <h5>Patricia Garcia</h5>
+                            <p>Property Investor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"Thanks to Abdulkhaliq's Property Solutions, I found a wonderful rental property that exceeded my expectations!"</p>
+                    <div class="testimonial-client">
+                        <img src="images/william.jpg" alt="William Martinez" class="client-img">
+                        <div class="client-info">
+                            <h5>William Martinez</h5>
+                            <p>Renter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+<!-- Testimonial Section End -->
+
+
+<!-- Include jQuery and Slick Carousel JS -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.testimonial-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: false, // Set to false to hide dots
+            arrows: true,
+            prevArrow: '<button class="slick-prev"></button>',
+            nextArrow: '<button class="slick-next"></button>',
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+</script>
+
+
+</style>
+
+
+
+<!-- JavaScript for Modal -->
+<script>
+    function openModal(title, description, imageUrl, properties) {
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalDescription').innerText = description;
+        document.getElementById('modalImage').src = imageUrl;
+        document.getElementById('modalProperties').innerText = properties;
+        
+        document.getElementById('propertyModal').style.display = 'block';
+    }
+    
+    function closeModal() {
+        document.getElementById('propertyModal').style.display = 'none';
+    }
+    </script>
+
+
+    <!-- Footer Start -->
+
+    <!-- Footer Start -->
+
+    <footer>
+        <div class="container-fluid">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <!-- Get In Touch Section -->
+                    <div class="col-lg-3">
+                      <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Ikorodu, Lagos State, Nigeria</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+2349036713072</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>aslamadeniyi41@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a href="https://twitter.com/freewebsitecode" class="btn btn-social"><i class="fab fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/profile.php?id=61563421359673" class="btn btn-social"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/@Abdulkhaliq-e6o" class="btn btn-social"><i class="fab fa-youtube"></i></a>
+                            <a href="https://instagram.com/abdulkhaliq.abdulmajeed" class="btn btn-social"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/+2349026713072" class="btn btn-social"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+    
+                              <!-- Quick Links Section -->
+                              <div class="col-lg-3 col-md-6">
+                                <h5 class="text-white mb-4">Quick Links</h5>
+                                <a href="about.html" class="btn-link text-white-50">About Us</a><br>
+                                <a href="contact.html" class="btn-link text-white-50">Contact Us</a><br>
+                                <a href="our services.html" class="btn-link text-white-50">Our Services</a><br>
+                                <a href="privacy policy.html" class="btn-link text-white-50">Privacy Policy</a><br>
+                                <a href="terms&conditions.html" class="btn-link text-white-50">Terms & Conditions</a>
+                            </div>
+            
+    
+                    <!-- Photo Gallery Section -->
+                     <!-- Photo Gallery Section -->
+              <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">Photo Gallery</h5>
+                <div class="row g-2">
+                  <div class="col-4">
+                    <img src="images/building 2.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">                   <img src="images/building 4.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/appartment image.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building image.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building 6.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building 5.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                </div>
+              </div>
+      
+      
+                    <!-- Newsletter Section -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p class="text-white">Subscribe to our newsletter for the latest updates and property listings.</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <form action="/thank-you.html" method="GET">
+                                <input type="email" class="form-control bg-transparent w-100 py-3 ps-4 pe-5" placeholder="Your email" aria-label="Email for newsletter subscription" required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>                    
+                  </div>
+    
+            <!-- Footer Bottom Section -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="https://AbdulkhaliqPropertySolutions.com" class="border-bottom">Abdulkhaliq Property Solutions</a>, All Rights Reserved.
+                        Designed by <a href="https://freewebsitecode.com" class="border-bottom">Free Website Code</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="cookies.html">Cookies</a>
+                        
+                            <a href="help.html">Help</a>
+                        
+                            <a href="404-error.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- Footer End -->
+
+
+    <style>
+        /* Chatbot Popup*/
+        .chatbot-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            max-height: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            z-index: 10001;
+        }
+
+        .chatbot-header {
+            background-color: #32CD32;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .chatbot-body {
+            padding: 10px;
+            flex-grow: 1;
+            overflow-y: auto;
+            font-size: 0.9rem;
+        }
+
+        .chatbot-footer {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+        }
+
+        .chatbot-footer input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .chatbot-footer button {
+            padding: 10px;
+            background-color: #32CD32;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Added missing semicolon */
+    background-color: #32CD32;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10000;
+}
+
+    </style>
+
+<!-- Chatbot Button -->
+<button class="chatbot-toggle" onclick="toggleChat()">💬</button>
+
+<!-- Chatbot Popup -->
+<div class="chatbot-popup" id="chatbotPopup">
+    <div class="chatbot-header">
+        <h3>Abdulkhaliq Property Solutions</h3>
+        <button onclick="toggleChat()" style="background:none; border:none; color:#fff; font-size:1.2rem; cursor:pointer;">&times;</button>
+    </div>
+    <div class="chatbot-body" id="chatbotBody">
+        <p>Hello! How can I assist you today?</p>
+    </div>
+    <div class="chatbot-footer">
+        <input type="text" id="userInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+// Toggle Chat Popup
+function toggleChat() {
+    const chatbotPopup = document.getElementById('chatbotPopup');
+    chatbotPopup.style.display = chatbotPopup.style.display === 'none' || chatbotPopup.style.display === '' ? 'flex' : 'none';
+}
+
+// Send Message Function
+async function sendMessage() {
+    const userInput = document.getElementById('userInput');
+    const message = userInput.value.trim();
+    if (message !== '') {
+        const chatBody = document.getElementById('chatbotBody');
+
+        // Append user message to chat
+        const userMessage = document.createElement('p');
+        userMessage.innerHTML = `<strong>You:</strong> ${message}`;
+        chatBody.appendChild(userMessage);
+
+        // Clear the input field
+        userInput.value = '';
+
+        // Simulate AI Response while waiting for OpenAI response
+        const aiResponse = document.createElement('p');
+        aiResponse.innerHTML = `<strong>AI:</strong> Please wait a moment...`;
+        chatBody.appendChild(aiResponse);
+
+        // Call OpenAI API for the actual response
+        const aiMessage = await callOpenAI(message);
+
+        // Append the AI response
+        aiResponse.innerHTML = `<strong>AI:</strong> ${aiMessage}`;
+        chatBody.scrollTop = chatBody.scrollHeight;  // Scroll to bottom
+    }
+}
+
+// Call OpenAI API
+async function callOpenAI(message) {
+    try {
+        const response = await fetch('https://api.openai.com/v1/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer YOUR_OPENAI_API_KEY' // Replace with your actual OpenAI API key
+            },
+            body: JSON.stringify({
+                model: 'text-davinci-003',
+                prompt: message,
+                max_tokens: 150
+            })
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            return data.choices[0].text.trim();
+        } else {
+            console.error('Error:', data.error);
+            return "Sorry, I couldn't process your request.";
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        return "Sorry, something went wrong. Please try again later.";
+    }
+}
+
+// Auto-show chatbot after 3 seconds
+window.onload = function() {
+    setTimeout(() => toggleChat(), 3000);
+};
+</script>
+
+    </div>
+
+    <script>
+        // Show content after a delay
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('spinner').style.display = 'none'; // Hide the spinner
+                document.getElementById('main-content').style.display = 'block'; // Show the main content
+            }, 1000); // 3000 milliseconds (3 seconds delay)
+        };
+    </script>
+
+</body>
+</html>
