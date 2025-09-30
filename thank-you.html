@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-content">
+            <h1>Thank You for Subscribing!</h1>
+            <p>You will now receive the latest updates and property listings directly in your inbox.</p>
+            <div class="thank-you-message">
+                <p>We appreciate your interest in <strong>Abdulkhaliq's Property Solutions</strong>.</p>
+                <p>If you have any questions or need assistance, feel free to <a href="contact.html">contact us</a>.</p>
+            </div>
+            <a href="index.html" class="btn-home">Return to Home</a>
+        </div>
+    </div>
+</body>
+</html>
+<style>/* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    /* Container for the Thank You Message */
+    .thank-you-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .thank-you-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 600px;
+        width: 100%;
+    }
+    
+    /* Heading Styles */
+    h1 {
+        font-size: 2.5rem;
+        color: #32CD32;
+        margin-bottom: 20px;
+    }
+    
+    /* Message and Links */
+    p {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    a {
+        color: #32CD32;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Button to Return Home */
+    .btn-home {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        background-color: #32CD32;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .btn-home:hover {
+        background-color: #28a745; /* Darker green on hover */
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .thank-you-content {
+            padding: 20px;
+        }
+    
+        h1 {
+            font-size: 2rem;
+        }
+    
+        p {
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        h1 {
+            font-size: 1.75rem;
+        }
+    
+        p {
+            font-size: 0.9rem;
+        }
+    }
+    </style>

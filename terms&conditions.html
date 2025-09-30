@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Terms and Conditions - Abdulkhaliq's Property Solutions</title>
+
+    <!--favicon-->
+    <link href="images/real_estate_icon.jpg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Icon font stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootstrap stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="images/real_estate_logo.jpg" type="image/x-icon">
+
+<body>
+
+
+<div class="container-xxl bg-white p-0">
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light py-3 px-4 sticky-top" style="background-color: #004080;">
+    <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img src="images/real_estate_icon.png" alt="icon" class="img-fluid">
+        <h1 class="ms-2">Abdulkhaliq's Property Solutions</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span id="navbar-icon" class="fas fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                <div class="dropdown-menu rounded-0 m-0">
+                    <a href="property-list.html" class="dropdown-item">Property List</a>
+                    <a href="property-type.html" class="dropdown-item">Property Type</a>
+                    <a href="property-agent.html" class="dropdown-item">Property Agent</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                <div class="dropdown-menu rounded-0 m-0">
+                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                    <a href="404-error.html" class="dropdown-item">404 Error</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+            <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addPropertyModal">Add Property</button>
+
+            <li class="nav-item">
+                <a href="signup.html" class="btn btn-outline-primary me-2">Sign Up</a>
+`               </li>
+            <li class="nav-item">
+                <a href="login.html" class="btn btn-outline-primary">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Navbar End -->
+</div>
+<!-- Add Property Modal -->
+<div class="modal fade" id="addPropertyModal" tabindex="-1" aria-labelledby="addPropertyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addPropertyModalLabel">Add New Property</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="propertyForm">
+            <div class="mb-3">
+              <label for="propertyTitle" class="form-label">Property Title</label>
+              <input type="text" class="form-control" id="propertyTitle" name="propertyTitle" placeholder="Enter property title" required>
+            </div>
+            <div class="mb-3">
+              <label for="propertyLocation" class="form-label">Property Location</label>
+              <input type="text" class="form-control" id="propertyLocation" name="propertyLocation" placeholder="Enter property location" required>
+            </div>
+            <div class="mb-3">
+                <label for="propertyPrice" class="form-label">Property Price</label>
+                <div class="input-group">
+                  <select class="form-select" id="currency" name="currency">
+                    <option value="₦">₦</option> <!-- Nigerian Naira -->
+                    <option value="$">$</option> <!-- Dollar -->
+                    <option value="€">€</option> <!-- Euro -->
+                    <option value="£">£</option> <!-- British Pound -->
+                    <option value="₹">₹</option> <!-- Indian Rupee -->
+                    <option value="¥">¥</option> <!-- Japanese Yen -->
+                    <option value="₣">₣</option> <!-- Swiss Franc -->
+                    <option value="₽">₽</option> <!-- Russian Ruble -->
+                    <option value="₺">₺</option> <!-- Turkish Lira -->
+                    <option value="kr">kr</option> <!-- Swedish Krona -->
+                    <option value="₴">₴</option> <!-- Ukrainian Hryvnia -->
+                    <option value="฿">฿</option> <!-- Thai Baht -->
+                    <option value="R$">R$</option> <!-- Brazilian Real -->
+                    <option value="A$">A$</option> <!-- Australian Dollar -->
+                    <option value="C$">C$</option> <!-- Canadian Dollar -->
+                    <option value="₩">₩</option> <!-- South Korean Won -->
+                    <option value="₲">₲</option> <!-- Paraguayan Guarani -->
+                    <option value="S$">S$</option> <!-- Singapore Dollar -->
+                    <option value="₵">₵</option> <!-- Ghanaian Cedi -->
+                    <option value="KSh">KSh</option> <!-- Kenyan Shilling -->
+                    <option value="RD$">RD$</option> <!-- Dominican Peso -->
+                    <option value="₽">₽</option> <!-- Russian Ruble -->
+                    <option value="NZ$">NZ$</option> <!-- New Zealand Dollar -->
+                    <option value="₺">₺</option> <!-- Turkish Lira -->
+                    <option value="د.إ">د.إ</option> <!-- UAE Dirham -->
+                    <option value="₿">₿</option> <!-- Bitcoin (cryptocurrency) -->
+                    <option value="BTC">BTC</option> <!-- Bitcoin (text) -->
+                    <option value="XOF">XOF</option> <!-- West African CFA franc -->
+                    <option value="XAF">XAF</option> <!-- Central African CFA franc -->
+                    
+                  </select>
+                  <input type="number" class="form-control" id="propertyPrice" name="propertyPrice" placeholder="Enter property price" required>
+                </div>
+              </div>
+              
+            <div class="mb-3">
+              <label for="propertyDescription" class="form-label">Property Description</label>
+              <textarea class="form-control" id="propertyDescription" name="propertyDescription" rows="4" placeholder="Enter property description" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="propertyImage" class="form-label">Property Image</label>
+              <input type="file" class="form-control" id="propertyImage" name="propertyImage" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Property</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Modal -->
+  
+
+  <!--terms and conditions begins-->
+  <div class="terms-container">
+    <h1 class="terms-title">Terms and Conditions</h1>
+    <p class="terms-intro">Welcome to Abdulkhaliq's Property Solutions. By accessing and using our services, you agree to abide by the following terms and conditions. Please read these terms carefully.</p>
+    
+    <h3 class="terms-section-title">1. General Information</h3>
+    <p class="terms-text">These terms and conditions outline the rules and regulations for using Abdulkhaliq’s Property Solutions' website. By accessing this website, we assume you accept these terms in full.</p>
+    
+    <h3 class="terms-section-title">2. Intellectual Property</h3>
+    <p class="terms-text">All content on this website, including text, images, logos, and other materials, are the property of Abdulkhaliq's Property Solutions unless otherwise noted. Unauthorized use of our content is strictly prohibited.</p>
+    
+    <h3 class="terms-section-title">3. Service and Pricing</h3>
+    <p class="terms-text">Abdulkhaliq's Property Solutions reserves the right to update or modify our service offerings and pricing at any time. Any changes to services or prices will be posted on this page.</p>
+    
+    <h3 class="terms-section-title">4. User Responsibilities</h3>
+    <p class="terms-text">Users must use this website responsibly and refrain from engaging in any activities that may disrupt our services or violate any applicable laws and regulations.</p>
+    
+    <h3 class="terms-section-title">5. Privacy Policy</h3>
+    <p class="terms-text">Your privacy is important to us. Please refer to our <a href="privacy-policy.html">Privacy Policy</a> for more information on how we handle your personal data.</p>
+    
+    <h3 class="terms-section-title">6. Limitation of Liability</h3>
+    <p class="terms-text">Abdulkhaliq's Property Solutions shall not be liable for any damages arising from the use or inability to use this website or any services provided.</p>
+    
+    <h3 class="terms-section-title">7. Changes to Terms and Conditions</h3>
+    <p class="terms-text">We reserve the right to modify these terms at any time. Any changes will be posted on this page, and it is the responsibility of users to stay updated.</p>
+    
+    <p class="terms-conclusion">Thank you for choosing Abdulkhaliq's Property Solutions. If you have any questions about these terms, please <a href="contact.html">contact us</a>.</p>
+</div>
+
+    <!-- Footer Start -->
+
+    <footer>
+        <div class="container-fluid">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <!-- Get In Touch Section -->
+                    <div class="col-lg-3">
+                      <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Ikorodu, Lagos State, Nigeria</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+2349036713072</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>aslamadeniyi41@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a href="https://twitter.com/freewebsitecode" class="btn btn-social"><i class="fab fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/profile.php?id=61563421359673" class="btn btn-social"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/@Abdulkhaliq-e6o" class="btn btn-social"><i class="fab fa-youtube"></i></a>
+                            <a href="https://instagram.com/abdulkhaliq.abdulmajeed" class="btn btn-social"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/+2349026713072" class="btn btn-social"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+               <!-- Quick Links Section -->
+               <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-4">Quick Links</h5>
+                <a href="about.html" class="btn-link text-white-50">About Us</a><br>
+                <a href="contact.html" class="btn-link text-white-50">Contact Us</a><br>
+                <a href="our services.html" class="btn-link text-white-50">Our Services</a><br>
+                <a href="privacy policy.html" class="btn-link text-white-50">Privacy Policy</a><br>
+                <a href="terms&conditions.html" class="btn-link text-white-50">Terms & Conditions</a>
+            </div>
+
+                    <!-- Photo Gallery Section -->
+                     <!-- Photo Gallery Section -->
+              <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">Photo Gallery</h5>
+                <div class="row g-2">
+                  <div class="col-4">
+                    <img src="images/building 2.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">                   <img src="images/building 4.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/appartment image.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building image.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building 6.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building 5.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                </div>
+              </div>
+      
+      
+                    <!-- Newsletter Section -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p class="text-white">Subscribe to our newsletter for the latest updates and property listings.</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <form action="/thank-you.html" method="GET">
+                                <input type="email" class="form-control bg-transparent w-100 py-3 ps-4 pe-5" placeholder="Your email" aria-label="Email for newsletter subscription" required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>                    
+                  </div>
+    
+            <!-- Footer Bottom Section -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="https://AbdulkhaliqPropertySolutions.com" class="border-bottom">Abdulkhaliq Property Solutions</a>, All Rights Reserved.
+                        Designed by <a href="https://freewebsitecode.com" class="border-bottom">Free Website Code</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="cookies.html">Cookies</a>
+                        
+                            <a href="help.html">Help</a>
+                        
+                            <a href="404-error.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Footer End -->
+
+    <style>
+
+        /* Navbar branding */
+        .navbar-brand img {
+            width: 120px;
+            height: 80px;
+        }
+
+        .navbar-brand h1 {
+    font-size: 1.5rem;
+    color: #32CD32;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand h1 {
+        font-size: 2rem;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .navbar-brand h1 {
+        font-size: 1.75rem;
+        white-space: normal;
+    }
+}
+/* Align Sign Up and Login buttons inline with other navbar items */
+.navbar-nav .nav-item {
+    margin: 0 8px; /* spacing between items */
+}
+
+.navbar-nav .nav-item .btn {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Navbar with buttons styled similarly to nav links */
+.navbar-nav .btn-outline-primary,
+.navbar-nav .btn-primary {
+    color: white;
+    background-color: #32CD32;
+     border: none;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    color: white;
+    background-color: #32CD; 
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: #32CD;
+    color: white;
+}
+
+    
+    /* Hero Section */
+    .hero-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f4f4f4;
+        padding: 100px 0;
+        margin: 0 8px;
+    }
+    
+    .hero-text {
+        max-width: 50%;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #000;
+    }
+    
+    .hero-text h1 span {
+        color: #32CD32;
+    }
+    
+    .hero-text p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        color: black;
+    }
+    
+    .hero-text .btn {
+        background-color: #32CD32;
+        border-color: #32CD32;
+        margin-top: 20px;
+    }
+    
+    .hero-image {
+        position: relative;
+        max-width: 100%;
+    }
+    
+    .hero-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    
+    /* Add Property Button Hover Effect */
+    .btn-primary {
+        background-color: #32CD32;
+        border-color: #32CD32;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .btn-primary:hover {
+        background-color: #2f93f7;
+        border-color: #2f93f7;
+        transform: scale(1.05);
+    }
+    
+    /* Adjust for smaller screens */
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .hero-text {
+            max-width: 100%;
+        }
+    
+        .hero-text h1 {
+            font-size: 2rem;
+        }
+    }
+    
+    /* Navbar link color */
+    .navbar-nav .nav-link {
+        color: black;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #32CD32;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 0 8px;
+    }
+    
+    /* Hamburger Menu */
+    .navbar-toggler {
+        position: relative;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: none;
+    }
+    
+    .navbar-toggler.collapsed .navbar-toggler-icon:before {
+        content: '\f0c9'; /* Font Awesome for menu icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
+    
+    .navbar-toggler:not(.collapsed) .navbar-toggler-icon:before {
+        content: '\f00d'; /* Font Awesome for cancel icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
+
+    /* Align Sign Up and Login buttons inline with other navbar items */
+.navbar-nav .nav-item {
+    margin: 0 8px; /* spacing between items */
+}
+
+.navbar-nav .nav-item .btn {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Navbar with buttons styled similarly to nav links */
+.navbar-nav .btn-outline-primary,
+.navbar-nav .btn-primary {
+    color: white;
+    background-color: #32CD32;
+     border: none;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    color: white;
+    background-color: #32CD; 
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: #32CD;
+    color: white;
+}
+
+.terms-container {
+    background: linear-gradient(135deg, #f3f4f6, #e3e7ed);
+    padding: 3rem;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 2rem auto;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.terms-title {
+    font-size: 2.8rem;
+    color: #333a4d;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.terms-intro {
+    font-size: 1.2rem;
+    color: #555f6d;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.terms-section-title {
+    font-size: 1.8rem;
+    color: #1a73e8;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.terms-text {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.terms-text a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.terms-text a:hover {
+    color: #0b5ed7;
+    text-decoration: underline;
+}
+
+.terms-conclusion {
+    font-size: 1.1rem;
+    color: #333a4d;
+    font-weight: 500;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .terms-container {
+        padding: 2rem;
+    }
+    
+    .terms-title {
+        font-size: 2.2rem;
+    }
+    
+    .terms-section-title {
+        font-size: 1.5rem;
+    }
+
+    .terms-intro, .terms-text {
+        font-size: 1rem;
+    }
+}
+
+
+/* Footer */
+footer {
+        background-color: #004080;
+        color: #fff;
+        padding: 40px 0;
+    }
+    
+    footer h5 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    footer p {
+        margin-bottom: 10px;
+    }
+    
+    .footer-menu {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+    
+    .footer-menu a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .footer-menu a:hover {
+        color: #f0e68c;
+        text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+        .footer-bottom {
+            text-align: center;
+        }
+    
+        .footer-menu {
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
+    
+    .btn-social {
+        background-color: white;
+        color: #004080;
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .btn-social:hover {
+        background-color: #32CD32;
+        color: white;
+    }
+
+     </style>
+     
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+    const icon = document.getElementById('navbar-icon');
+    if (icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times'); // Change to cancel icon
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars'); // Change back to hamburger icon
+    }
+});
+</script>
+<script>document.getElementById('currency').addEventListener('change', function() {
+    var selectedCurrency = this.value;
+    document.getElementById('propertyPrice').value = selectedCurrency + " " + document.getElementById('propertyPrice').value.replace(/[^0-9.]/g, '');
+  });
+  </script>
+
+</body>
+</html>

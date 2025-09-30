@@ -1,0 +1,1381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>get-started-Abdulkhaliq's Property Solutions</title>
+
+    <!--favicon-->
+    <link href="images/real_estate_icon.jpg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Icon font stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootstrap stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="images/real_estate_logo.jpg" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <div class="container-xxl bg-white p-0">
+            <!-- Navigation Bar -->
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 px-4 sticky-top" style="background-color: #004080;">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="images/real_estate_icon.png" alt="icon" class="img-fluid">
+                    <h1 class="ms-2">Abdulkhaliq's Property Solutions</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span id="navbar-icon" class="fas fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link active">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="property-list.html" class="dropdown-item">Property List</a>
+                                <a href="property-type.html" class="dropdown-item">Property Type</a>
+                                <a href="property-agent.html" class="dropdown-item">Property Agent</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="404-error.html" class="dropdown-item">404 Error</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                        <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addPropertyModal">Add Property</button>
+            
+                        <li class="nav-item">
+                            <a href="signup.html" class="btn btn-outline-primary me-2">Sign Up</a>
+            `               </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="btn btn-outline-primary">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+            </div>
+            <!-- Add Property Modal -->
+            <div class="modal fade" id="addPropertyModal" tabindex="-1" aria-labelledby="addPropertyModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addPropertyModalLabel">Add New Property</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="propertyForm">
+                        <div class="mb-3">
+                          <label for="propertyTitle" class="form-label">Property Title</label>
+                          <input type="text" class="form-control" id="propertyTitle" name="propertyTitle" placeholder="Enter property title" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="propertyLocation" class="form-label">Property Location</label>
+                          <input type="text" class="form-control" id="propertyLocation" name="propertyLocation" placeholder="Enter property location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="propertyPrice" class="form-label">Property Price</label>
+                            <div class="input-group">
+                              <select class="form-select" id="currency" name="currency">
+                                <option value="₦">₦</option> <!-- Nigerian Naira -->
+                                <option value="$">$</option> <!-- Dollar -->
+                                <option value="€">€</option> <!-- Euro -->
+                                <option value="£">£</option> <!-- British Pound -->
+                                <option value="₹">₹</option> <!-- Indian Rupee -->
+                                <option value="¥">¥</option> <!-- Japanese Yen -->
+                                <option value="₣">₣</option> <!-- Swiss Franc -->
+                                <option value="₽">₽</option> <!-- Russian Ruble -->
+                                <option value="₺">₺</option> <!-- Turkish Lira -->
+                                <option value="kr">kr</option> <!-- Swedish Krona -->
+                                <option value="₴">₴</option> <!-- Ukrainian Hryvnia -->
+                                <option value="฿">฿</option> <!-- Thai Baht -->
+                                <option value="R$">R$</option> <!-- Brazilian Real -->
+                                <option value="A$">A$</option> <!-- Australian Dollar -->
+                                <option value="C$">C$</option> <!-- Canadian Dollar -->
+                                <option value="₩">₩</option> <!-- South Korean Won -->
+                                <option value="₲">₲</option> <!-- Paraguayan Guarani -->
+                                <option value="S$">S$</option> <!-- Singapore Dollar -->
+                                <option value="₵">₵</option> <!-- Ghanaian Cedi -->
+                                <option value="KSh">KSh</option> <!-- Kenyan Shilling -->
+                                <option value="RD$">RD$</option> <!-- Dominican Peso -->
+                                <option value="₽">₽</option> <!-- Russian Ruble -->
+                                <option value="NZ$">NZ$</option> <!-- New Zealand Dollar -->
+                                <option value="₺">₺</option> <!-- Turkish Lira -->
+                                <option value="د.إ">د.إ</option> <!-- UAE Dirham -->
+                                <option value="₿">₿</option> <!-- Bitcoin (cryptocurrency) -->
+                                <option value="BTC">BTC</option> <!-- Bitcoin (text) -->
+                                <option value="XOF">XOF</option> <!-- West African CFA franc -->
+                                <option value="XAF">XAF</option> <!-- Central African CFA franc -->
+                                
+                              </select>
+                              <input type="number" class="form-control" id="propertyPrice" name="propertyPrice" placeholder="Enter property price" required>
+                            </div>
+                          </div>
+                          
+                        <div class="mb-3">
+                          <label for="propertyDescription" class="form-label">Property Description</label>
+                          <textarea class="form-control" id="propertyDescription" name="propertyDescription" rows="4" placeholder="Enter property description" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="propertyImage" class="form-label">Property Image</label>
+                          <input type="file" class="form-control" id="propertyImage" name="propertyImage" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Property</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Modal -->
+              
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container d-flex flex-column flex-md-row align-items-center">
+        <div class="hero-text text-center text-md-start mb-4 mb-md-0">
+            <h1>Welcome to <span>Abdulkhaliq Property Solutions</span></h1>
+            <p>Your trusted real estate partner in Nigeria.</p>
+        </div>
+        <div class="hero-image">
+            <img src="images/get_started_image1.jpg" alt="Hero Image" class="img-fluid rounded">
+        </div>
+    </div>
+</section>
+  
+    </header>
+
+    <div class="container-xxl py-5">
+        <div class="container text-center">
+            <h1 class="mb-4">Get Started With Your Property Journey</h1>
+            <p class="mb-4">We are here to help you find the perfect property. Follow these simple steps to get started!</p>
+            <div class="steps">
+                <div class="step">
+                    <i class="fas fa-search fa-2x mb-3"></i>
+                    <h3>1. Search for Properties</h3>
+                    <p>Use our search feature to find properties that meet your needs.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-info-circle fa-2x mb-3"></i>
+                    <h3>2. Get Information</h3>
+                    <p>Contact us for more details about the properties you're interested in.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-comments fa-2x mb-3"></i>
+                    <h3>3. Schedule a Visit</h3>
+                    <p>Arrange a visit to see the properties in person.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-check-circle fa-2x mb-3"></i>
+                    <h3>4. Make Your Choice</h3>
+                    <p>Choose the property that feels right for you and your family.</p>
+                </div>
+            </div>
+
+
+ <!-- Hero Section -->
+ <section class="hero">
+    <div class="hero-content">
+      <h1>Find the perfect property with Abdulkhaliq Property Solutions</h1>
+      <form class="search-bar">
+        <input type="text" placeholder="City, Address, ZIP">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Core Services Section -->
+  <section class="services">
+    <div class="service-card">
+      <h2>Buy</h2>
+      <p>Find your dream home with our experienced agents.</p>
+      <button>Find an Agent</button>
+    </div>
+    <div class="service-card">
+      <h2>Sell</h2>
+      <p>Get top dollar for your property with our expert advice.</p>
+      <button>Explore Sells</button>
+    </div>
+    <div class="service-card">
+      <h2>Rent</h2>
+      <p>Explore rental properties suited to your needs.</p>
+      <button>Explore Rentals</button>
+    </div>
+  </section>
+
+  <!-- App Promotion Section -->
+  
+<div class="get-app-section">
+    <div class="app-info">
+        <h2>Get the Abdulkhaliq Property Solutions App</h2>
+        <p>Download our top-rated real estate app for iOS or Android to get alerts the moment your dream home hits the market.</p>
+    </div>
+    <div class="qr-and-image">
+        <div class="qr-code">
+            <img src="" alt="QR code to download the app">
+            <p>Scan to download the app</p>
+        </div>
+        <div class="app-preview">
+            <img src="images/Capture Ab.PNG" alt="App preview showing property listing">
+        </div>
+    </div>
+</div>
+ <!-- Meet the Agents Section -->
+<section class="agents">
+    <h2>Talk to an Expert Agent</h2>
+    <p>Our agents are here to help you every step of the way, without any pressure.</p>
+    <form class="agent-search" id="agent-search-form">
+      <input type="text" id="location-input" placeholder="Where are you searching for properties?" required>
+      <button type="submit">Search</button>
+    </form>
+  
+    <!-- This section will be shown if the location is verified -->
+    <div id="agent-contact" class="agent-contact" style="display: none;">
+      <h3>Contact an Agent</h3>
+      <form action="http://localhost:4000/send-message" method="POST">
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  
+    <!-- Section for Location Error -->
+    <div id="location-error" class="location-error" style="display: none;">
+      <p>Sorry, location not found. Please try another location.</p>
+    </div>
+  </section>
+
+
+  <section class="property-links">
+    <h2>Search Properties by Location</h2>
+    <h3>Cities</h3>
+    <div class="links">
+        <a href="#">Abidjan</a>
+        <a href="#">Accra</a>
+        <a href="#">Addis Ababa</a>
+        <a href="#">Ado Ekiti</a>
+        <a href="#">Akure</a>
+        <a href="#">Algiers</a>
+        <a href="#">Asaba</a>
+        <a href="#">Athens</a>
+        <a href="#">Barcelona</a>
+        <a href="#">Benin City</a>
+        <a href="#">Berlin</a>
+        <a href="#">Buenos Aires</a>
+        <a href="#">Cairo</a>
+        <a href="#">Calabar</a>
+        <a href="#">Casablanca</a>
+        <a href="#">Cape Town</a>
+        <a href="#">Chicago</a>
+        <a href="#">Dubai</a>
+        <a href="#">Dakar</a>
+        <a href="#">Damaturu</a>
+        <a href="#">Enugu</a>
+        <a href="#">Eket</a>
+        <a href="#">Freetown</a>
+        <a href="#">Gombe</a>
+        <a href="#">Harare</a>
+        <a href="#">Hong Kong</a>
+        <a href="#">Ife</a>
+        <a href="#">Ikeja</a>
+        <a href="#">Ilesha</a>
+        <a href="#">Ikorodu</a>
+        <a href="#">Ikot Ekpene</a>
+        <a href="#">Istanbul</a>
+        <a href="#">Jakarta</a>
+        <a href="#">Johannesburg</a>
+        <a href="#">Kano</a>
+        <a href="#">Katsina</a>
+        <a href="#">Kinshasa</a>
+        <a href="#">Kigali</a>
+        <a href="#">Kuala Lumpur</a>
+        <a href="#">Lagos</a>
+        <a href="#">Lima</a>
+        <a href="#">London</a>
+        <a href="#">Los Angeles</a>
+        <a href="#">Lusaka</a>
+        <a href="#">Maiduguri</a>
+        <a href="#">Maputo</a>
+        <a href="#">Mexico City</a>
+        <a href="#">Moscow</a>
+        <a href="#">Mumbai</a>
+        <a href="#">Minna</a>
+        <a href="#">New York</a>
+        <a href="#">Nairobi</a>
+        <a href="#">Onitsha</a>
+        <a href="#">Oshogbo</a>
+        <a href="#">Owerri</a>
+        <a href="#">Paris</a>
+        <a href="#">Port Harcourt</a>
+        <a href="#">Pretoria</a>
+        <a href="#">Rio de Janeiro</a>
+        <a href="#">Riyadh</a>
+        <a href="#">Rome</a>
+        <a href="#">San Francisco</a>
+        <a href="#">Seoul</a>
+        <a href="#">Shanghai</a>
+        <a href="#">Singapore</a>
+        <a href="#">Sokoto</a>
+        <a href="#">Stockholm</a>
+        <a href="#">Tunis</a>
+        <a href="#">Tokyo</a>
+        <a href="#">Vienna</a>
+        <a href="#">Warsaw</a>
+        <a href="#">Wuhan</a>
+        <a href="#">Zaria</a>
+    </div>
+</section>
+
+
+
+            <h2 class="mb-4">Contact Us</h2>
+            <form class="contact-form" action="submit-form.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+
+    <footer>
+        <div class="container-fluid">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <!-- Get In Touch Section -->
+                    <div class="col-lg-3">
+                      <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Ikorodu, Lagos State, Nigeria</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+2349036713072</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>aslamadeniyi41@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a href="https://twitter.com/freewebsitecode" class="btn btn-social"><i class="fab fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/profile.php?id=61563421359673" class="btn btn-social"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/@Abdulkhaliq-e6o" class="btn btn-social"><i class="fab fa-youtube"></i></a>
+                            <a href="https://instagram.com/abdulkhaliq.abdulmajeed" class="btn btn-social"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/+2349026713072" class="btn btn-social"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+    
+                              <!-- Quick Links Section -->
+                              <div class="col-lg-3 col-md-6">
+                                <h5 class="text-white mb-4">Quick Links</h5>
+                                <a href="about.html" class="btn-link text-white-50">About Us</a><br>
+                                <a href="contact.html" class="btn-link text-white-50">Contact Us</a><br>
+                                <a href="our services.html" class="btn-link text-white-50">Our Services</a><br>
+                                <a href="privacy policy.html" class="btn-link text-white-50">Privacy Policy</a><br>
+                                <a href="terms&conditions.html" class="btn-link text-white-50">Terms & Conditions</a>
+                            </div>
+            
+                    <!-- Photo Gallery Section -->
+                     <!-- Photo Gallery Section -->
+              <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">Photo Gallery</h5>
+                <div class="row g-2">
+                  <div class="col-4">
+                    <img src="images/building 2.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">                   <img src="images/building 4.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/appartment image.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building image.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building 6.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building 5.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                </div>
+              </div>
+      
+      
+                    <!-- Newsletter Section -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p class="text-white">Subscribe to our newsletter for the latest updates and property listings.</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <form action="/thank-you.html" method="GET">
+                                <input type="email" class="form-control bg-transparent w-100 py-3 ps-4 pe-5" placeholder="Your email" aria-label="Email for newsletter subscription" required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>                    
+                  </div>
+    
+            <!-- Footer Bottom Section -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="https://AbdulkhaliqPropertySolutions.com" class="border-bottom">Abdulkhaliq Property Solutions</a>, All Rights Reserved.
+                        Designed by <a href="https://freewebsitecode.com" class="border-bottom">Free Website Code</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="cookies.html">Cookies</a>
+                        
+                            <a href="help.html">Help</a>
+                        
+                            <a href="404-error.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Footer End -->
+
+<style>
+
+        /* Navbar branding */
+        .navbar-brand img {
+            width: 120px;
+            height: 80px;
+        }
+
+        .navbar-brand h1 {
+    font-size: 1.5rem;
+    color: #32CD32;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand h1 {
+        font-size: 2rem;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .navbar-brand h1 {
+        font-size: 1.75rem;
+        white-space: normal;
+    }
+}
+/* Align Sign Up and Login buttons inline with other navbar items */
+.navbar-nav .nav-item {
+    margin: 0 8px; /* spacing between items */
+}
+
+.navbar-nav .nav-item .btn {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Navbar with buttons styled similarly to nav links */
+.navbar-nav .btn-outline-primary,
+.navbar-nav .btn-primary {
+    color: white;
+    background-color: #32CD32;
+     border: none;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    color: white;
+    background-color: #32CD; 
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: #32CD;
+    color: white;
+}
+
+    
+
+    
+    .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0; /* Adjust the padding as needed */
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.hero-text h1 span {
+    color: #32CD32; /* Highlight color */
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #333; /* Darker text for better readability */
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto; /* Responsive image */
+    max-width: 600px; /* Limit the maximum width */
+    border-radius: 10px; /* Rounded corners */
+}
+
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text {
+        max-width: 100%; /* Full width on small screens */
+    }
+}
+
+
+    /* Hero Section */
+    .hero-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f4f4f4;
+        padding: 100px 0;
+        margin: 0 8px;
+    }
+    
+    .hero-text {
+        max-width: 50%;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #000;
+    }
+    
+    .hero-text h1 span {
+        color: #32CD32;
+    }
+    
+    .hero-text p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        color: black;
+    }
+    
+    .hero-text .btn {
+        background-color: #32CD32;
+        border-color: #32CD32;
+        margin-top: 20px;
+    }
+    
+    .hero-image {
+        position: relative;
+        max-width: 100%;
+    }
+    
+    .hero-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    
+    /* Add Property Button Hover Effect */
+    .btn-primary {
+        background-color: #32CD32;
+        border-color: #32CD32;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .btn-primary:hover {
+        background-color: #2f93f7;
+        border-color: #2f93f7;
+        transform: scale(1.05);
+    }
+    
+    /* Adjust for smaller screens */
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .hero-text {
+            max-width: 100%;
+        }
+    
+        .hero-text h1 {
+            font-size: 2rem;
+        }
+    }
+    
+    /* Navbar link color */
+    .navbar-nav .nav-link {
+        color: black;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #32CD32;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 0 8px;
+    }
+    
+    /* Hamburger Menu */
+    .navbar-toggler {
+        position: relative;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: none;
+    }
+    
+    .navbar-toggler.collapsed .navbar-toggler-icon:before {
+        content: '\f0c9'; /* Font Awesome for menu icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
+    
+    .navbar-toggler:not(.collapsed) .navbar-toggler-icon:before {
+        content: '\f00d'; /* Font Awesome for cancel icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
+
+    /* Align Sign Up and Login buttons inline with other navbar items */
+.navbar-nav .nav-item {
+    margin: 0 8px; /* spacing between items */
+}
+
+.navbar-nav .nav-item .btn {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Navbar with buttons styled similarly to nav links */
+.navbar-nav .btn-outline-primary,
+.navbar-nav .btn-primary {
+    color: white;
+    background-color: #32CD32;
+     border: none;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    color: white;
+    background-color: #32CD; 
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: #32CD;
+    color: white;
+}
+
+
+    /* Hero Section */
+    .hero {
+        background-image: url('images/get started image.jpg'); /* Replace with your image */
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 20px;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .search-bar input {
+        padding: 10px;
+        width: 300px;
+        border: none;
+        border-radius: 5px 0 0 5px;
+    }
+    
+    .search-bar button {
+        padding: 10px 20px;
+        background-color: #32CD32;
+        border: none;
+        color: white;
+        border-radius: 0 5px 5px 0;
+    }
+    
+    /* Steps Section */
+    .steps {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 20px;
+    }
+    
+    .step {
+        text-align: center;
+        width: 23%;
+    }
+    
+    .step i {
+        color: #32CD32;
+        margin-bottom: 15px;
+    }
+    
+    .step h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: #004080;
+    }
+
+    @media screen and (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 10px;
+    }
+
+    .step {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .step h3 {
+        font-size: 1.1rem;
+    }
+}
+
+    
+    /* Services Section */
+    .services {
+        display: flex;
+        justify-content: space-around;
+        padding: 50px 20px;
+        background-color: #fff;
+    }
+    
+    .service-card {
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 30%;
+    }
+    
+    .service-card h2 {
+        margin-bottom: 10px;
+        color: #007bff;
+    }
+    
+    .service-card button {
+        padding: 10px 20px;
+        background-color: #32CD32;
+        border: none;
+        color: white;
+        border-radius: 5px;
+    }
+    
+    .service-card button :hover  {
+        background-color: #32CD;
+        transform: scale(1.05);
+    }
+
+    /* App Promotion Section */
+    .get-app-section {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-info {
+    max-width: 300px;
+    margin-right: 40px;
+}
+
+.app-info h2 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.app-info p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.qr-and-image {
+    display: flex;
+    align-items: center;
+}
+
+.qr-code {
+    text-align: center;
+    margin-right: 20px;
+}
+
+.qr-code img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.qr-code p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.app-preview img {
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .get-app-section {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .app-info {
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .qr-and-image {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .qr-code {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .app-preview img {
+        width: 150px;
+    }
+}
+    /* Agents Section */
+    .agents {
+  text-align: center;
+  padding: 20px;
+}
+
+.agent-search input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 250px;
+  font-size: 1rem;
+}
+
+.agent-search button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: limegreen;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.agent-search button:hover {
+  background-color: darkgreen;
+}
+
+.agent-contact, .location-error {
+  margin-top: 20px;
+}
+
+.agent-contact h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.agent-contact form {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.agent-contact div {
+  margin-bottom: 10px;
+}
+
+.agent-contact label {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.agent-contact input, .agent-contact textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.agent-contact button {
+  background-color: limegreen;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.agent-contact button:hover {
+  background-color: darkgreen;
+}
+
+.location-error {
+  color: red;
+  font-size: 1.2rem;
+}
+/* Property Links Section */
+.property-links {
+    padding: 40px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.property-links h2 {
+    font-size: 2rem;
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+.property-links h3 {
+    color: limegreen; /* Lime Green color */
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.property-links .links {
+    display: grid; /* Use grid layout for better control */
+    grid-template-columns: repeat(10, 1fr); /* 10 equal columns by default */
+    gap: 10px; /* Add spacing between items */
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center; /* Center the items in each column */
+}
+
+.property-links a {
+    color: #004080;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    text-align: center;
+}
+
+.property-links a:hover {
+    color: #32CD32;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .property-links .links {
+        grid-template-columns: repeat(8, 1fr); /* 8 columns on medium screens */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .property-links .links {
+        grid-template-columns: repeat(6, 1fr); /* 6 columns on smaller tablets */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .property-links .links {
+        grid-template-columns: repeat(5, 1fr); /* 5 columns on small tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .property-links .links {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on mobile screens */
+    }
+
+    .property-links h2 {
+        font-size: 1.5rem;
+    }
+
+    .property-links h3 {
+        font-size: 1.2rem;
+    }
+
+    .property-links a {
+        font-size: 0.85rem;
+    }
+}
+
+    
+    /* Contact Form */
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    .contact-form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        border-radius: 5px;
+    }
+    
+    footer {
+    background-color: #004080; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 40px 0; /* Padding for top and bottom */
+}
+
+footer h5 {
+    font-size: 18px; /* Heading size */
+    font-weight: bold; /* Bold headings */
+}
+
+footer p {
+    margin-bottom: 10px; /* Space between paragraphs */
+}
+
+footer .btn-link {
+    color: #ffffff; /* White text for links */
+    text-decoration: none; /* Remove underline */
+}
+
+footer .btn-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+footer .btn-social {
+    background-color: transparent; /* Transparent background for social buttons */
+    border: 1px solid #fff; /* White border */
+    border-radius: 50%; /* Round buttons */
+    margin-right: 10px; /* Space between buttons */
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    display: flex; /* Flex for center alignment */
+    justify-content: center; /* Center align */
+    align-items: center; /* Center align */
+}
+
+footer .form-control {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    color: #fff; /* White text for input */
+}
+
+footer .form-control::placeholder {
+    color: #bbb; /* Light gray placeholder text */
+}
+
+footer .position-relative {
+    position: relative; /* Required for button positioning */
+}
+
+footer .copyright {
+    border-top: 1px solid #444; /* Top border for separation */
+    padding-top: 20px; /* Padding for top */
+}
+
+@media (max-width: 768px) {
+    footer .row > div {
+        margin-bottom: 30px; /* Space between columns on smaller screens */
+    }
+}
+
+
+.footer-bottom {
+    background-color: #004080;
+    padding: 20px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom a.border-bottom {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 2px;
+}
+
+.footer-bottom a.border-bottom:hover {
+    color: #f0e68c;
+    border-bottom-color: #f0e68c;
+}
+
+
+.footer-menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.footer-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-menu a:hover {
+    color: #f0e68c;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer-bottom {
+        text-align: center;
+    }
+    
+    .footer-menu {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-bottom .text-md-start {
+        text-align: left;
+    }
+
+    .footer-bottom .text-md-end {
+        text-align: right;
+    }
+}
+
+
+.btn-social {
+        background-color: white;
+        color: #004080;
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .btn-social:hover {
+        background-color: #32CD32;
+        color: white;
+    }
+
+
+    /* Spinner */
+    #spinner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+    
+    .spinner-border {
+        color: #004080;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .navbar-brand h1 {
+            font-size: 1.2rem;
+        }
+    
+        .steps {
+            flex-direction: column;
+        }
+    
+        .services {
+            flex-direction: column;
+            padding: 20px;
+        }
+    
+        .service-card {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    
+        .property-links .links {
+            flex-direction: column;
+        }
+    
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+        }
+    }
+    </style>
+        <script>
+            document.querySelectorAll('.faq-question').forEach(item => {
+                item.addEventListener('click', () => {
+                    const answer = item.nextElementSibling;
+                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        </script>
+        
+    
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Hide Spinner After Page Load -->
+    <script>
+        window.addEventListener('load', function () {
+            document.getElementById('spinner').style.display = 'none';
+        });
+    </script>
+    
+    <script>
+    document.querySelector('.navbar-toggler').addEventListener('click', function() {
+        const icon = document.getElementById('navbar-icon');
+        if (icon.classList.contains('fa-bars')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times'); // Change to cancel icon
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars'); // Change back to hamburger icon
+        }
+    });
+    </script>
+
+<script>// JavaScript to handle location search and validation
+    const verifiedLocations = [
+      // List of verified locations...
+"Afghanistan", "Albania", "Algeria", "Us", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", 
+      "Armenia", "Australia", "Austria", "Azerbaijan", "America", "Bahamas", "Bahrain", "Bangladesh", "Barbados", 
+      "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", 
+      "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", 
+      "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", 
+      "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Democratic Republic of the Congo", 
+      "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", 
+      "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", 
+      "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", 
+      "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", 
+      "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea (North)", "Korea (South)", "Kuwait", "Kyrgyzstan", 
+      "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", 
+      "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", 
+      "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", 
+      "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Macedonia", 
+      "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", 
+      "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", 
+      "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", 
+      "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Sudan", "Spain", 
+      "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", 
+      "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", 
+      "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", 
+      "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe",
+      "Abuja", "Lagos", "Ibadan", "Kano", "Port Harcourt", "Jos", "Owerri", "Benin City", 
+      "Enugu", "Kaduna", "Akure", "Makurdi", "Ilorin", "Uyo", "Warri", "Onitsha", "Asaba", 
+      "Minna", "Ado Ekiti", "Yenagoa", "Zaria", "Abia", "Adamawa", "Akwa Ibom", "Anambra", 
+      "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", 
+      "Ekiti", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", 
+      "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", 
+      "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara",
+      "New York", "London", "Tokyo", "Paris", "Sydney", "Berlin", "Rome", "Barcelona", "Los Angeles", 
+      "Mexico City", "Shanghai", "Beijing", "Dubai", "Mumbai", "São Paulo", "Rio de Janeiro", "Istanbul", 
+      "Bangkok", "Seoul", "Singapore", "Cairo", "Moscow", "Buenos Aires", "Lagos", "Dubai", "Riyadh", 
+      "Karachi", "Dhaka", "Lima", "Jakarta", "Kuala Lumpur", "Cape Town", "Madrid", "Paris", "Abuja", 
+      "Jakarta", "Mumbai", "Tegucigalpa", "Athens", "Santiago", "Cairo", "San Francisco", "Toronto", 
+      "Chicago", "Vienna", "Bangalore", "Manila", "Copenhagen", "Stockholm", "Helsinki", "Oslo", "Brisbane",
+      "New Delhi", "Montreal", "Baku", "Jakarta", "Kuwait City", "Doha", "Lagos", "Paris", "Sydney", 
+      "Algiers", "Lagos", "Cairo", "Dubai", "Helsinki", "Caracas", "Hong Kong", "Cape Town", "Warsaw"
+    ];
+    
+  
+  document.getElementById("agent-search-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const locationInput = document.getElementById("location-input").value.trim().toLowerCase();  // Convert input to lowercase
+    
+    // Check if the location is in the verifiedLocations array (case insensitive)
+    const locationFound = verifiedLocations.some(location => location.toLowerCase() === locationInput);
+    
+    // Show or hide sections based on location validation
+    if (locationFound) {
+      document.getElementById("agent-contact").style.display = "block";  // Show agent contact
+      document.getElementById("location-error").style.display = "none";  // Hide error
+    } else {
+      document.getElementById("agent-contact").style.display = "none";   // Hide agent contact
+      document.getElementById("location-error").style.display = "block"; // Show error
+    }
+  });
+</script>
+<script>document.getElementById('currency').addEventListener('change', function() {
+    var selectedCurrency = this.value;
+    document.getElementById('propertyPrice').value = selectedCurrency + " " + document.getElementById('propertyPrice').value.replace(/[^0-9.]/g, '');
+  });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Help-Abdulkhaliq's Property Solutions</title>
+
+    <!--favicon-->
+    <link href="images/real_estate_icon.jpg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Icon font stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootstrap stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="images/real_estate_logo.jpg" type="image/x-icon">
+
+    
+</head>
+<style>
+
+    
+    /* Navbar branding */
+    .navbar-brand img {
+        width: 120px;
+        height: 80px;
+    }
+    
+    .navbar-brand h1 {
+        font-size: 1.5rem;
+        color: #32CD32;
+        white-space: nowrap;
+    }
+    
+    @media (max-width: 768px) {
+        .navbar-brand h1 {
+            font-size: 2rem;
+            white-space: normal;
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 375px) {
+        .navbar-brand h1 {
+            font-size: 1.75rem;
+        }
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f4f4f4;
+        padding: 100px 0;
+        margin: 0 8px;
+    }
+    
+    .hero-text {
+        max-width: 50%;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #000;
+    }
+    
+    .hero-text h1 span {
+        color: #32CD32;
+    }
+    
+    .hero-text p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        color: black;
+    }
+    
+    .hero-text .btn {
+        background-color: #32CD32;
+        border-color: #32CD32;
+        margin-top: 20px;
+    }
+    
+    .hero-image {
+        position: relative;
+        max-width: 100%;
+    }
+    
+    .hero-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    
+    /* Add Property Button Hover Effect */
+    .btn-primary {
+        background-color: #32CD32;
+        border-color: #32CD32;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .btn-primary:hover {
+        background-color: #2f93f7;
+        border-color: #2f93f7;
+        transform: scale(1.05);
+    }
+    
+    /* Adjust for smaller screens */
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .hero-text {
+            max-width: 100%;
+        }
+    
+        .hero-text h1 {
+            font-size: 2rem;
+        }
+    }
+    
+    /* Navbar link color */
+    .navbar-nav .nav-link {
+        color: black;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #32CD32;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 0 8px;
+    }
+    
+    /* Hamburger Menu */
+    .navbar-toggler {
+        position: relative;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: none;
+    }
+    
+    .navbar-toggler.collapsed .navbar-toggler-icon:before {
+        content: '\f0c9'; /* Font Awesome for menu icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
+    
+    .navbar-toggler:not(.collapsed) .navbar-toggler-icon:before {
+        content: '\f00d'; /* Font Awesome for cancel icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
+   
+    /* Align Sign Up and Login buttons inline with other navbar items */
+.navbar-nav .nav-item {
+    margin: 0 8px; /* spacing between items */
+}
+
+.navbar-nav .nav-item .btn {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Navbar with buttons styled similarly to nav links */
+.navbar-nav .btn-outline-primary,
+.navbar-nav .btn-primary {
+    color: white;
+    background-color: #32CD32;
+     border: none;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    color: white;
+    background-color: #32CD; 
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: #32CD;
+    color: white;
+}
+
+    /* Headings */
+    h1 {
+        font-size: 2.8rem;
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+        color: #2980b9;
+        margin-top: 40px;
+        position: relative;
+    }
+    
+    h2::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 4px;
+        background-color: #2980b9;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+    }
+    
+    h3 {
+        font-size: 1.6rem;
+        color: #34495e;
+        margin-top: 20px;
+    }
+    
+    /* Paragraphs */
+    p {
+        margin: 15px 0;
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+    
+    /* Footer */
+    footer {
+        background-color: #004080;
+        color: #fff;
+        padding: 40px 0;
+    }
+    
+    footer h5 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    footer p {
+        margin-bottom: 10px;
+    }
+    
+    .footer-menu {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+    
+    .footer-menu a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .footer-menu a:hover {
+        color: #f0e68c;
+        text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+        .footer-bottom {
+            text-align: center;
+        }
+    
+        .footer-menu {
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2rem;
+        }
+    
+        h2 {
+            font-size: 1.75rem;
+        }
+    
+        h3 {
+            font-size: 1.4rem;
+        }
+    
+        p {
+            font-size: 1rem;
+        }
+    
+        .container {
+            padding: 10px;
+        }
+    }
+    
+    /* Help Center Specific Styles */
+    .help-container {
+        background-color: #32CD32; /* Lime green background for help center */
+        padding: 20px; /* Add some padding */
+    }
+    
+    /* Help Center Heading Styles */
+    .help-container h1 {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .help-container h2 {
+        margin-top: 30px;
+        color: #2980b9;
+    }
+    
+    .help-container h3 {
+        margin-top: 20px;
+        color: #34495e;
+    }
+    
+    .help-container p {
+        margin: 10px 0;
+    }
+    
+    </style>
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 px-4 sticky-top" style="background-color: #004080;">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <img src="images/real_estate_icon.png" alt="icon" class="img-fluid">
+                <h1 class="ms-2">Abdulkhaliq's Property Solutions</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span id="navbar-icon" class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="property-list.html" class="dropdown-item">Property List</a>
+                            <a href="property-type.html" class="dropdown-item">Property Type</a>
+                            <a href="property-agent.html" class="dropdown-item">Property Agent</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="404-error.html" class="dropdown-item">404 Error</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                    <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addPropertyModal">Add Property</button>
+        
+                    <li class="nav-item">
+                        <a href="signup.html" class="btn btn-outline-primary me-2">Sign Up</a>
+        `               </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="btn btn-outline-primary">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+        </div>
+        <!-- Add Property Modal -->
+        <div class="modal fade" id="addPropertyModal" tabindex="-1" aria-labelledby="addPropertyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="addPropertyModalLabel">Add New Property</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="propertyForm">
+                    <div class="mb-3">
+                      <label for="propertyTitle" class="form-label">Property Title</label>
+                      <input type="text" class="form-control" id="propertyTitle" name="propertyTitle" placeholder="Enter property title" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="propertyLocation" class="form-label">Property Location</label>
+                      <input type="text" class="form-control" id="propertyLocation" name="propertyLocation" placeholder="Enter property location" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="propertyPrice" class="form-label">Property Price</label>
+                        <div class="input-group">
+                          <select class="form-select" id="currency" name="currency">
+                            <option value="₦">₦</option> <!-- Nigerian Naira -->
+                            <option value="$">$</option> <!-- Dollar -->
+                            <option value="€">€</option> <!-- Euro -->
+                            <option value="£">£</option> <!-- British Pound -->
+                            <option value="₹">₹</option> <!-- Indian Rupee -->
+                            <option value="¥">¥</option> <!-- Japanese Yen -->
+                            <option value="₣">₣</option> <!-- Swiss Franc -->
+                            <option value="₽">₽</option> <!-- Russian Ruble -->
+                            <option value="₺">₺</option> <!-- Turkish Lira -->
+                            <option value="kr">kr</option> <!-- Swedish Krona -->
+                            <option value="₴">₴</option> <!-- Ukrainian Hryvnia -->
+                            <option value="฿">฿</option> <!-- Thai Baht -->
+                            <option value="R$">R$</option> <!-- Brazilian Real -->
+                            <option value="A$">A$</option> <!-- Australian Dollar -->
+                            <option value="C$">C$</option> <!-- Canadian Dollar -->
+                            <option value="₩">₩</option> <!-- South Korean Won -->
+                            <option value="₲">₲</option> <!-- Paraguayan Guarani -->
+                            <option value="S$">S$</option> <!-- Singapore Dollar -->
+                            <option value="₵">₵</option> <!-- Ghanaian Cedi -->
+                            <option value="KSh">KSh</option> <!-- Kenyan Shilling -->
+                            <option value="RD$">RD$</option> <!-- Dominican Peso -->
+                            <option value="₽">₽</option> <!-- Russian Ruble -->
+                            <option value="NZ$">NZ$</option> <!-- New Zealand Dollar -->
+                            <option value="₺">₺</option> <!-- Turkish Lira -->
+                            <option value="د.إ">د.إ</option> <!-- UAE Dirham -->
+                            <option value="₿">₿</option> <!-- Bitcoin (cryptocurrency) -->
+                            <option value="BTC">BTC</option> <!-- Bitcoin (text) -->
+                            <option value="XOF">XOF</option> <!-- West African CFA franc -->
+                            <option value="XAF">XAF</option> <!-- Central African CFA franc -->
+                            
+                          </select>
+                          <input type="number" class="form-control" id="propertyPrice" name="propertyPrice" placeholder="Enter property price" required>
+                        </div>
+                      </div>
+                      
+                    <div class="mb-3">
+                      <label for="propertyDescription" class="form-label">Property Description</label>
+                      <textarea class="form-control" id="propertyDescription" name="propertyDescription" rows="4" placeholder="Enter property description" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="propertyImage" class="form-label">Property Image</label>
+                      <input type="file" class="form-control" id="propertyImage" name="propertyImage" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Property</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Modal -->
+          
+
+    <div class="help-container">
+    <h1>Help Center - Abdulkhaliq Property Solutions</h1>
+    <p>Welcome to the Abdulkhaliq Property Solutions Help Center. Below, you'll find answers to frequently asked questions, tutorials on how to use our platform, and guidance on troubleshooting issues.</p>
+
+    <h2>General Information</h2>
+    <h3>What is Abdulkhaliq Property Solutions?</h3>
+    <p>Abdulkhaliq Property Solutions is a real estate platform that helps users buy, sell, rent, and manage properties across Nigeria. Whether you're looking for a new home or investment property, we provide all the tools you need to make informed decisions.</p>
+
+    <h3>How do I create an account?</h3>
+    <p>Creating an account is simple. Click on the "Sign Up" button located on the top right of the homepage, fill in your details, and you'll receive a confirmation email to verify your account. Once verified, you can log in and start browsing properties or managing your listings.</p>
+
+    <h3>How do I reset my password?</h3>
+    <p>If you've forgotten your password, click the "Forgot Password?" link on the login page. Enter your registered email address, and a password reset link will be sent to you. Follow the instructions to reset your password securely.</p>
+
+    <h3>Is Abdulkhaliq Property Solutions free to use?</h3>
+    <p>Yes, our platform is free for users to browse listings, explore property details, and contact agents. However, premium features such as priority listing or dedicated agent support may come with additional costs.</p>
+
+    <h2>Using the Platform</h2>
+    <h3>How do I search for properties?</h3>
+    <p>To search for properties, use the search bar on our homepage. You can filter your search by location, property type, price range, and number of bedrooms. You can also sort results by date listed or price.</p>
+
+    <h3>How do I list a property for sale or rent?</h3>
+    <p>Once logged in, click on the "Add Property" button in your dashboard. Fill out the property details, upload images, and set the price. After submitting, your listing will be reviewed and published within 24 hours.</p>
+
+    <h3>Can I edit my property listing after it's posted?</h3>
+    <p>Yes, you can edit your listing anytime by logging into your account, navigating to your dashboard, and selecting the property you wish to modify. From there, you can update any details, images, or pricing information.</p>
+
+    <h3>How do I contact an agent?</h3>
+    <p>If you're interested in a property, you can contact the listing agent directly by clicking the "Contact Agent" button on the property details page. This will allow you to send a message or request a viewing.</p>
+
+    <h2>Troubleshooting</h2>
+    <h3>Why am I not receiving emails from Abdulkhaliq Property Solutions?</h3>
+    <p>If you're not receiving our emails, please check your spam or junk mail folder. If you still can't find our emails, make sure your email address is entered correctly in your account settings and that your inbox is not full.</p>
+
+    <h3>Why can't I log into my account?</h3>
+    <p>If you're having trouble logging in, ensure you're using the correct email and password. If you've forgotten your password, use the "Forgot Password?" link to reset it. If the problem persists, contact our support team for assistance.</p>
+
+    <h3>Why isn't my property listing appearing?</h3>
+    <p>There are a few reasons why your listing might not appear: it may still be under review, or there could be missing or incorrect details. Make sure your listing is complete, including all required images and descriptions, and it will be published shortly.</p>
+
+    <h3>How can I delete my account?</h3>
+    <p>If you wish to delete your account, please contact our support team. They'll guide you through the process and ensure all your data is removed from our system.</p>
+
+    <h2>Additional Features</h2>
+    <h3>How do I sign up for the newsletter?</h3>
+    <p>You can sign up for our newsletter by entering your email in the "Subscribe" section located at the bottom of the homepage. You'll receive updates on new properties, market trends, and tips for buying or selling real estate.</p>
+
+    <h3>Can I save my favorite properties?</h3>
+    <p>Yes, you can save properties to your "Favorites" list by clicking the heart icon on the property page. You can access your saved properties from your dashboard at any time.</p>
+
+    <h3>How do I change my notification preferences?</h3>
+    <p>To update your notification preferences, log into your account and go to the "Settings" section. From there, you can choose which types of emails or notifications you'd like to receive.</p>
+
+    <h3>What is the "Compare Properties" feature?</h3>
+    <p>The "Compare Properties" feature allows you to compare multiple properties side by side. You can select properties you're interested in and view them in a grid format, making it easier to see differences in price, size, and features.</p>
+
+    <h2>Contacting Support</h2>
+    <h3>How do I reach customer support?</h3>
+    <p>If you need assistance, you can contact our customer support team by clicking the "Get in Touch" link in the footer or by sending an email to support@abdulkhaliqpropertysolutions.com. Our team is available Monday through Friday from 9 AM to 5 PM.</p>
+
+    <h3>Is there a help forum?</h3>
+    <p>Yes, we have a community help forum where users can ask questions, share experiences, and offer advice. You can access the forum from your dashboard or by clicking the "Help" link in the footer.</p>
+
+    <h3>Can I schedule a call with an agent?</h3>
+    <p>Yes, you can schedule a call with one of our agents directly from the property details page. Look for the "Schedule a Call" button, and choose a time that works best for you.</p>
+
+    <h3>Are there video tutorials available?</h3>
+    <p>We offer video tutorials on various aspects of using our platform, including how to list properties, search for homes, and manage your account. You can find these videos in the "Help" section of our website.</p>
+
+    <h3>How do I provide feedback?</h3>
+    <p>We value your feedback! You can provide feedback on our services or suggest improvements by clicking the "Feedback" link in your account dashboard. We review all feedback and use it to improve our platform.</p>
+</div>
+
+
+
+    <!-- Footer Start -->
+
+    <footer>
+        <div class="container-fluid">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <!-- Get In Touch Section -->
+                    <div class="col-lg-3">
+                      <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Ikorodu, Lagos State, Nigeria</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+2349036713072</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>aslamadeniyi41@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a href="https://twitter.com/freewebsitecode" class="btn btn-social"><i class="fab fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/profile.php?id=61563421359673" class="btn btn-social"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/@Abdulkhaliq-e6o" class="btn btn-social"><i class="fab fa-youtube"></i></a>
+                            <a href="https://instagram.com/abdulkhaliq.abdulmajeed" class="btn btn-social"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/+2349026713072" class="btn btn-social"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+    
+                               <!-- Quick Links Section -->
+                               <div class="col-lg-3 col-md-6">
+                                <h5 class="text-white mb-4">Quick Links</h5>
+                                <a href="about.html" class="btn-link text-white-50">About Us</a><br>
+                                <a href="contact.html" class="btn-link text-white-50">Contact Us</a><br>
+                                <a href="our services.html" class="btn-link text-white-50">Our Services</a><br>
+                                <a href="privacy policy.html" class="btn-link text-white-50">Privacy Policy</a><br>
+                                <a href="terms&conditions.html" class="btn-link text-white-50">Terms & Conditions</a>
+                            </div>
+            
+    
+                    <!-- Photo Gallery Section -->
+                     <!-- Photo Gallery Section -->
+              <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">Photo Gallery</h5>
+                <div class="row g-2">
+                  <div class="col-4">
+                    <img src="images/building 2.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">                   <img src="images/building 4.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/appartment image.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building image.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building 6.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                  <div class="col-4">
+                    <img src="images/building 5.jpg" alt="property image" class="img-fluid rounded bg-light p-1">
+                  </div>
+                </div>
+              </div>
+      
+      
+                    <!-- Newsletter Section -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p class="text-white">Subscribe to our newsletter for the latest updates and property listings.</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <form action="/thank-you.html" method="GET">
+                                <input type="email" class="form-control bg-transparent w-100 py-3 ps-4 pe-5" placeholder="Your email" aria-label="Email for newsletter subscription" required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>                    
+                  </div>
+    
+            <!-- Footer Bottom Section -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="https://AbdulkhaliqPropertySolutions.com" class="border-bottom">Abdulkhaliq Property Solutions</a>, All Rights Reserved.
+                        Designed by <a href="https://freewebsitecode.com" class="border-bottom">Free Website Code</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="cookies.html">Cookies</a>
+                        
+                            <a href="help.html">Help</a>
+                        
+                            <a href="404-error.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Footer End -->
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Hide Spinner After Page Load -->
+<script>
+    window.addEventListener('load', function () {
+        document.getElementById('spinner').style.display = 'none';
+    });
+</script>
+
+<script>
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+    const icon = document.getElementById('navbar-icon');
+    if (icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times'); // Change to cancel icon
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars'); // Change back to hamburger icon
+    }
+});
+</script>
+
+<script>document.getElementById('currency').addEventListener('change', function() {
+    var selectedCurrency = this.value;
+    document.getElementById('propertyPrice').value = selectedCurrency + " " + document.getElementById('propertyPrice').value.replace(/[^0-9.]/g, '');
+  });
+  </script>
+
+
+</body>
+</html>
